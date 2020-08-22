@@ -1,0 +1,16 @@
+@bot.command()
+async def test(ctx):
+   #in case you want the bot to message the author
+   author = ctx.message.author
+   embed = discord.Embed(title='Test', description='''
+   hello
+   ''')
+   embed.set_footer(text='test')
+   #if you want to pm the author use:
+   await author.send(embed=embed)
+   #if you want the bot too send it into a chat use:
+   await ctx.send(embed=embed)
+   
+   
+   #of course you can add things like a thumbnail by using embed.set_thumbnail(url='download.jpeg'), this is just how to add a basic embed. if u need any help, just ask!
+
