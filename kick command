@@ -1,0 +1,13 @@
+@bot.command()
+@has_permissions(kick_members=True)
+async def kick(ctx, member: discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+    if reason != None:
+        reason1 = 'with the reason ' + reason
+    else:
+        reason1 = 'without a reason'
+    embed = discord.Embed(title='cya', description=f'''
+    {member} got kicked by {ctx.message.author.mention} with the reason {reason1}.
+    ''')
+    embed.set_footer(text='bye')
+    await ctx.send(embed=embed)
